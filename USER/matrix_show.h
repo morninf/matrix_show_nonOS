@@ -1,0 +1,39 @@
+#ifndef _MATRIX_SHOW_H_
+#define _MATRIX_SHOW_H_
+
+
+#define FONT_LEN							(16)
+#define WORD_NUM_EACH_BOARD					(2)
+#define ONE_WORD_SIZE_BYTE					(32)
+#define ONE_BOARD_BYTE_NUM					(ONE_WORD_SIZE_BYTE*WORD_NUM_EACH_BOARD)
+
+#define MATRIX_CASCADE_NUM					4
+
+#define MATRIX_MAX_CASCADE_NUM				10
+#define TEMP_BOARD_NUM						10
+
+#define MATRIX_MAX_WORD						(2*MATRIX_MAX_CASCADE_NUM)
+
+#define BLANK_BOARD_NUM						2
+
+//20*64 * 1280byte
+#define MATRIX_MAX_BUFFER_SIZE				((MATRIX_MAX_CASCADE_NUM+MATRIX_MAX_CASCADE_NUM)*ONE_BOARD_BYTE_NUM )
+
+#define AS_MATRIX_MAX_LEN					((BLANK_BOARD_NUM+MATRIX_MAX_CASCADE_NUM+TEMP_BOARD_NUM)* WORD_NUM_EACH_BOARD *2)
+#define BLANK_MATRIX_LEN					(BLANK_BOARD_NUM* WORD_NUM_EACH_BOARD *2)
+
+#define SHOW_LEN 							(MATRIX_CASCADE_NUM * WORD_NUM_EACH_BOARD * 2)
+
+
+#define TURE_WORD_NUM						(9)
+#define TRUE_WORD_LEN						( TURE_WORD_NUM * 2 )
+
+#define MATRIX_THREAD_NAME	"matrix"
+#define MATRIX_THREAD_STACK_SIZE	4096
+#define MATRIX_THREAD_PRIORITY		21
+
+int matrix_show_init(void);
+void matrix_show_round(void);
+
+
+#endif
